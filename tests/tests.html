@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hoover Tests</title>
+</head>
+<body>
+<script type = "module">
+    //importing runHoover function from runHoover.js to navigate the hoover.
+    import  { runHoover } from '../modules/runHoover.js';
+
+    // fetching tests from json file
+    const results = fetch('tests.json')
+    .then(res => res.json())
+    .then(async(data)=>{
+        //Going through each test and executing runHoover method. Display expected vs.actual results.
+        for(let test of data.tests){
+            //Displaying test description / expected result
+            console.info(`Test #${test.id}.\n${test.testDescription}`);
+            try{
+                //Displaying actual result
+                await runHoover(`test_input_files/${test.inputFile}`);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    })
+    .catch((error) => console.log(error));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+{
+    "tests": [
+        {
+            "id": 1,
+            "testDescription": "Verify the case when zero patches are cleaned.\nExpected result:\nFinal hoover position - [1,0], cleaned patches: 0.",
+            "inputFile": "test_input_1_0_0.txt"
+        },
+        {
+            "id": 2,
+            "testDescription": "Verify the case when end position matches cleaned patch:\nFinal hoover position - [2,2], cleaned patches: 1.",
+            "inputFile": "test_input_2_2_1.txt"
+        },
+        {
+            "id": 3,
+            "testDescription": "Verify the case when patches to clean are absent:\nFinal hoover position - [4,4], cleaned patches: 0.",
+            "inputFile": "test_input_4_4_0.txt"
+        },
+        {
+            "id": 4,
+            "testDescription": "Verify the case when hoover skids:\nFinal hoover position - [4,4], cleaned patches: 2.",
+            "inputFile": "test_input_4_4_2.txt"
+        },
+        {
+            "id": 5,
+            "testDescription": "Verify invalid input file format:\nExpected throw: Invalid input.txt format: input.txt file should have at least room dimensions, initial coordinate, and navigation instructions. ",
+            "inputFile": "test_input_invalid_file_format_1.txt"
+        },
+        {
+            "id": 6,
+            "testDescription": "Verify invalid input file format:\nExpected throw: Invalid input.txt format: Ensure that each line has only two coordinates and no extra spaces.",
+            "inputFile": "test_input_invalid_file_format_2.txt"
+        },
+        {
+            "id": 7,
+            "testDescription": "Verify invalid input file format:\nExpected throw: Room dimensions or coordinates cannot take negative values.",
+            "inputFile": "test_input_invalid_initial_position_1.txt"
+        },
+        {
+            "id": 8,
+            "testDescription": "Verify invalid input file format:\nExpected throw: Initial robotic hoover prosition is beyond the room limits.",
+            "inputFile": "test_input_invalid_initial_position_2.txt"
+        }, 
+        {
+            "id": 9,
+            "testDescription": "Verify invalid input file format:\nExpected throw: Driving instructions must include only \"N\", \"S\", \"W\", \"E\" characters (upper case)",
+            "inputFile": "test_input_invalid_instructions.txt"
+        },
+        {
+            "id": 10,
+            "testDescription": "Verify invalid input file format:\nExpected throw: Room dimensions or coordinates cannot take negative values.",
+            "inputFile": "test_input_negative_dimention.txt"
+        },
+        {
+            "id": 11,
+            "testDescription": "Verify invalid input file format:\nExpected throw: Invalid input.txt format: One or more of coordinates parameter is not a number!",
+            "inputFile": "test_input_value_isNaN.txt"
+        },
+        {
+            "id": 12,
+            "testDescription": "Verify invalid input file format:\nExpected throw: Room dimension cannot be zero.",
+            "inputFile": "test_input_zero_dimention.txt"
+        }
+    ]
+}
